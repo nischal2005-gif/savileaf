@@ -1,0 +1,192 @@
+
+/* Navigation Section */
+.navigation{
+    background-image: url("/images/graph-hand.jpeg") !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center !important;
+    color: #000 !important;
+}
+.navigation::before{
+    content: none !important;
+}
+.navigation-bg {
+    opacity: 0.5 !important;
+}
+.navigation-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.page-title {
+    color: #000 !important;
+}
+.navigation-content a {
+    color: #000 !important;
+}
+
+
+
+/* Case Study1 Section */
+.case-study{
+    padding: 120px 0;
+}
+.case-study-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+.case-study-summary{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    gap: 24px;
+    background: linear-gradient(124deg, #000 60%, #011410 40%);
+    width: 30%;
+    flex-grow: 1; 
+    overflow: hidden;
+    position: relative;
+}
+.case-study-summary::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: -20px;
+    left: -20px;
+    background: #ffffff;
+    filter: blur(100px);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.case-study-summary p{
+    color: #ffffff;
+    line-height: 24px;
+    border-bottom: 1px solid #0ed5a72e;
+    padding-bottom: 12px;
+}
+
+.case-study-summary strong , .case-study-details strong{
+    color: white;
+    display: block;
+    position: relative;
+    font-size: 22px;
+}
+
+.case-study-summary strong{
+    margin-bottom: 12px;
+}
+
+.case-study-details strong{
+    margin-bottom: 24px;
+}
+
+.case-study-summary strong::before, .case-study-summary strong::after, .case-study-details strong::before, .case-study-details strong::after{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    transform: skewX(40deg);
+    bottom: -8px;
+}
+.case-study-summary strong::before, .case-study-summary strong::after{
+    background: linear-gradient(35deg, #616161, #c5c4c4, #616161);
+}
+.case-study-summary strong::before, .case-study-details strong::before{
+    left: 0;
+}
+
+.case-study-summary strong::after, .case-study-details strong::after{
+    left: 35px;
+    transition: 0.2s ease-in-out;
+}
+.case-study-details strong::before, .case-study-details strong::after{
+    background:#00674f;
+    background: linear-gradient(to right, #03614b, #3bd4b1);
+}
+.case-study-details {
+    width: 70%;
+    padding: 40px;
+    display: flex;
+    background: #535353;
+    background: linear-gradient(132deg, #0ed5a7, #024e3d, #01281f);
+    flex-direction: column;
+    color: white;
+    flex-grow: 1;
+}
+
+.case-study-details p{
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #fff;
+}
+.case-study-result-img{
+    width: 100%;
+    margin-top: 32px;
+}
+.case-study-result-img p{
+    font-size: 40px;
+    text-align: center;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 24px;
+    margin-bottom: 12px;
+}
+.case-study-result-img div{
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+.case-study-result-img div img{
+    width: 240px;
+}
+
+
+
+@media (max-width:768px) {
+    /* Case Study1 Section 768*/
+    .case-study-summary {
+        padding: 10px;
+        gap: 12px;
+    }
+    .case-study-result-img div {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .case-study-details {
+        padding: 10px;
+    }
+    .case-study-summary strong, .case-study-details strong {
+        font-size: 20px;
+    }
+    .case-study-details strong {
+        margin-bottom: 18px;
+    }
+    .case-study-details p {
+        padding-bottom: 18px;
+        margin-bottom: 18px;
+    }
+}
+
+
+@media (max-width:480px) {
+    /* Case Study1 Section 480*/      
+    .case-study {
+        padding: 80px 0;
+    }
+    .case-study-details p {
+        font-size: 14px;
+    }
+    .case-study-summary p {
+        font-size: 14px;
+        line-height: 19px;
+    }
+    .case-study-summary strong, .case-study-details strong {
+        font-size: 16px;
+    }
+}

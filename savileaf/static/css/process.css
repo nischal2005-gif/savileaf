@@ -1,0 +1,290 @@
+/* Process Overview Section */
+.process-overview{
+    padding: 80px 0 120px;
+}
+.process-overview-steps{
+    display: flex;
+    justify-content:center;
+    gap:20px;
+    position: relative;
+}
+.process-overview .title{
+    margin-bottom: 10px;
+}
+.process-overview-description{
+    margin-bottom: 40px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    text-align: center;
+}
+.process-overview-description span{
+    color: var(--primary-color);
+    font-weight: bold;
+}
+.process-overview-step a{
+    display: block;
+    text-decoration: none;
+    margin-top: 10px;
+}
+.process-overview-steps .process-overview-step{
+    width: 13.5%;
+    display: flex;
+    gap: 22px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+}
+.process-overview-steps .process-overview-step span{
+    /* background: linear-gradient(35deg, #000, #979797,#414141 ); */
+    background: linear-gradient(132deg, #07ebb6, #059f7b, #00674f);
+    padding:14px 10px;
+    border-radius:50% ;
+    color: white;    
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+}
+.process-overview-steps .process-overview-step span img{
+    margin-left: 8px;
+    transition: 0.2s ease-in-out;
+}
+.process-overview-steps .process-overview-step a{
+    transition: 0.2s ease-in-out;
+}
+.process-overview-steps .process-overview-step a:hover{
+    transform: translateY(-5px);
+}
+.process-overview-steps .process-overview-step a:hover img{
+    rotate: 45deg;
+}
+.process-overview-steps .process-overview-step a:hover span{
+    background: #00674f;
+}
+.process-overview-steps .process-overview-step p{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+.line{
+    position: absolute;
+    height: 2px;
+    width: 89% !important;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+    background: linear-gradient(to right, #585858, #c0c0c0 );
+}
+
+
+/* Process Summary Section */
+.process-summary{
+    background: #001b13;
+    background-image: url("/images/process-summary-bg-img2.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: contain;
+    background-position: center;
+    height: 100vh;
+    /* height: 510px; */
+    min-height: 600px;
+    max-height: 610px;
+    width: 100%;
+    overflow: auto;
+    position: relative;
+    padding: 0 0 120px;
+    color: white;
+}
+.process-summary-wrapper{
+    position: relative;
+}
+.process-cta{
+    position: sticky !important;
+    top: 50%;
+    transform: translate(10%, -1783%);
+    /* top: 0; */
+    /* left: 105%; */
+    /* right: -100%; */
+    rotate: 90deg;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 18px;
+
+}
+.process-summary-wrapper p{
+    margin-bottom: 32px;
+    position: relative;
+}
+
+
+/* Summary Section ScrollBar */
+.process-summary::-webkit-scrollbar {
+    width: 0px; 
+}
+.process1{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 60px 0;
+    border-bottom: 1px dashed #fff;
+    margin-left: -60px;
+}
+.process1-left, .process1-right{
+    width: 45%;
+    background:#00000045;
+    padding: 10px 16px;
+    margin-top: 16px;
+}
+.process1-left .title{
+    justify-content: start;
+    margin-bottom: 16px;
+}
+.step{
+    font-weight: bold;
+    font-size: 22px;
+    width: 100%;
+}
+.process-container{
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.process-description{
+    line-height: 24px;
+}
+.process1-right p{
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 18px;
+    color:#03bb90;
+}
+.process1-right ul{
+    list-style: none;
+    margin-left: 24px;
+}
+.process1-right ul li{
+    margin-bottom: 12px;
+    position: relative;
+}
+.process1-right ul li::before{
+    content: "";
+    position: absolute;
+    background-image: url('/images/circle-check.png');
+    height: 14px;
+    width: 14px;
+    background-size: contain;
+    top: 4.2px;
+    left: -22px;
+}
+.process-bottom-text{
+    position: relative;
+    width: 500px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 10px 18px;
+    border-left: 4px solid #00674f;
+    margin-top: 32px;
+    background: #fff;
+    background: linear-gradient(45deg, #222222, #7e7e7e, #414141);
+    border-radius: 4px 0 0 4px;
+    color: #49ffd4;
+}
+
+@media (max-width:1120px) {
+    .process-container {
+        padding: 0 0 0 40px;
+    }
+  }
+@media (min-width: 1440px) {
+    .process-summary {
+        height: 50vh;
+    }
+  }
+
+  @media (max-width:768px) {
+    /* Process Overview Section 768*/
+    .process-overview-steps .process-overview-step p {
+        font-size: 14px;
+    } 
+
+
+    /* Process Summary Section 768*/
+    .process-container {
+        padding: 0 0 0 0;
+    }
+    .process1 {
+        gap: 16px;
+        justify-content: center;
+        margin-left: 0;
+    }
+    .step {
+        margin-left: 10px;
+    }
+    .process-bottom-text {
+        width: 500px;
+        left: 0; 
+        transform: none;
+    }
+    .process1-left .title {
+        font-size: 28px;    
+    }
+    
+  }
+
+  @media (max-width:480px) {
+    /* Process Overview Section 480*/
+    .process-overview-steps .process-overview-step p {
+        font-size: 14px;
+    } 
+    .process-overview-description {
+        margin-bottom: 32px;
+        width: 100%;
+    }
+    .process-overview-steps {
+        flex-wrap: wrap;        
+        row-gap: 32px;
+    }    
+    .process-overview-steps .process-overview-step {
+        width: 19.5%;
+    }
+    .line{
+        background: none;
+    }
+
+
+    /* Process Summary Section 480*/
+    .process1 {
+        gap:0;
+        padding: 32px 0;
+    }
+    .process1-left, .process1-right{
+        width: 90%;
+    }
+    .process-bottom-text {
+        width: 90%;
+        font-size: 14px;
+        padding: 6px 12px;
+        margin-top: 18px;
+        line-height: 20px;
+    }
+    .process1-left .title {
+        font-size: 24px;    
+    }
+    .process1-right p {
+        font-size: 20px;
+        margin-bottom: 14px;
+    }
+    .process1-right ul li {
+        margin-bottom: 8px;
+        font-size: 15px;
+    }
+    .process-description {
+        font-size: 15px;
+        line-height: 22px;
+    }
+  }

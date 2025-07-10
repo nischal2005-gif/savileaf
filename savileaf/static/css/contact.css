@@ -1,0 +1,163 @@
+/* Contact Info Section */
+.contact-info {
+    padding: 120px 0;
+}
+
+.contact-info-title {
+    display: flex;
+    gap: 32px;
+    align-items: start;
+    margin-bottom: 40px;
+
+}
+
+.contact-info-title-description {
+    width: 500px;
+}
+
+.contact-info-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-info-form,
+.contact-info-detail,
+.contact-info-map {
+    width: 33.33%;
+}
+
+.contact-info-form {
+    background-color: rgb(218, 218, 218);
+    padding: 32px 20px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    border: none;
+}
+
+.contact-info-form .cta-btn {
+    width: 100%;
+}
+
+
+/* Contact Detail Box */
+.contact-info-detail {
+    /* background: linear-gradient(45deg, black, #dfdfdf); */
+    background: linear-gradient(136deg, #01382b, #02b389);
+    padding: 0 20px 32px;
+    color: white;
+}
+
+.contact-info-item {
+    margin-bottom: 24px;
+}
+
+.telephone-img {
+    display: flex;
+    justify-content: center;
+}
+
+.telephone-img img {
+    height: 150px;
+    transform: scaleX(-1);
+}
+
+.info-icon {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 12px;
+}
+
+.info-icon img {
+    height: 24px;
+    width: 32px;
+    object-fit: contain;
+}
+
+.contact-info-item p {
+    padding-left: 56px;
+}
+
+.contact-info-item.social {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 24px;
+}
+
+.contact-info-item.social img {
+    margin-top: 24px;
+    height: 20px;
+    opacity: 0.5;
+    transition: 0.1s ease;
+}
+
+.contact-info-item.social img:hover {
+    opacity: 1;
+}
+
+
+@media (max-width:768px) {
+    /* Contact Detail Box 768*/
+    .contact-info-wrapper {
+        flex-wrap: wrap;
+    }
+    .contact-info-form,
+    .contact-info-detail{
+        width:50%;
+    }
+    .contact-info-map {
+        width: 100%;
+    }
+    .contact-info-map iframe{
+        height: 250px;
+    }
+}
+
+@media (max-width:480px) {
+    /* Contact Detail Box 480*/
+    .contact-info {
+        padding: 80px 0;
+    }
+    .contact-info-title{
+        flex-wrap: wrap;
+        gap: 0;
+    }
+    .contact-info-title .title {
+        margin-bottom: 18px;
+    }
+    .contact-info-title-description {
+        width: 100%;
+    }
+    
+    .contact-info-form,
+    .contact-info-detail{
+        width:100%;
+    }
+}

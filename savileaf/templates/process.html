@@ -1,0 +1,389 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/favicon-32x32.png' %}" sizes="32x32" type="image/png">
+    <link rel="icon" href="{% static 'images/favicon-16x16.png' %}" sizes="16x16" type="image/png">
+    <title>Our Process | Discovery, Strategy, Design, Development, and Ongoing Support</title>
+    <link rel="stylesheet" href="{% static 'css/process.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+   <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <ul id="nav-links" class="navlinks">
+            <li><a href="{% url 'home' %}" target="_self">Home</a></li>
+            <li class="dropdown">
+                <a>Services</a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'website_development' %}" target="_self">Website Development</a></li>
+                    <li><a href="{% url 'website_redesign' %}" target="_self">Website Redesign & Modernisation</a></li>
+                    <li><a href="{% url 'web_app_development' %}" target="_self">Web App Development</a></li>
+                    <li><a href="{% url 'mobile_app_development' %}" target="_self">Mobile App Development</a></li>
+                    <li><a href="{% url 'payment_gateway' %}" target="_self">Payment Gateway Integration</a></li>
+                    <li><a href="{% url 'ai_solutions' %}" target="_self">AI-Powered Business Solutions</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="{% url 'case_studies' %}">Case Studies</a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'global_retailer' %}" target="_self">Global Retailer</a></li>
+                    <li><a href="{% url 'techcorpinnovations' %}" target="_self">TechCorp Innovations</a></li>
+                    <li><a href="{% url 'innovatetech' %}" target="_self">InnovateTech</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'process' %}" target="_self">Our Process</a></li>
+            <li><a href="{% url 'contact' %}" target="_self">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Header Section -->
+    <div class="body-overlay" id="overlay"></div>
+    <header>
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'images/site-logo2.png' %}" height="50px" alt="Company Logo">
+                </a>
+                <nav>
+                    <div class="hamburger" id="hamburger">
+                        <div class="hamburger-wrapper">
+                            <div></div>
+                            <!-- <div></div> -->
+                            <div></div>
+                        </div>
+                    </div>
+                    <ul class="navlink-desktopscreen">
+                        <li><a href="{% url 'home' %}" target="_self">Home</a></li>
+                        <li class="dropdown">
+                            <a>Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'website_development' %}" target="_self">Website Development</a></li>
+                                <li><a href="{% url 'website_redesign' %}" target="_self">Website Redesign & Modernisation</a></li>
+                                <li><a href="{% url 'web_app_development' %}" target="_self">Web App Development</a></li>
+                                <li><a href="{% url 'mobile_app_development' %}" target="_self">Mobile App Development</a></li>
+                                <li><a href="{% url 'payment_gateway' %}" target="_self">Payment Gateway Integration</a></li>
+                                <li><a href="{% url 'ai_solutions' %}" target="_self">AI-Powered Business Solutions</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="{% url 'case_studies' %}">Case Studies</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'global_retailer' %}" target="_self">Global Retailer</a></li>
+                                <li><a href="{% url 'techcorpinnovations' %}" target="_self">TechCorp Innovations</a></li>
+                                <li><a href="{% url 'innovatetech' %}" target="_self">InnovateTech</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'process' %}" target="_self">Our Process</a></li>
+                        <li><a href="{% url 'contact' %}" target="_self">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Section -->
+    <section class="navigation">
+        <div class="container">
+            <div class="navigation-content">
+                <p class="page-title">Our Process</p>
+                <p><span><a href="{% url 'home' %}" target="_self">Home</a></span> || <span>Our Process</span></p>
+            </div>
+            <img class="navigation-img" src="{% static 'images/hosting-illustration3.png' %}" alt="">
+        </div>
+    </section>
+
+    <!-- Process Overview Section -->
+    <section class="process-overview">
+        <div class="container">
+            <div class="title">
+                <div></div>
+                <p>Your Project Flow</p>
+            </div>
+            <p class="process-overview-description">At <span>SilverValley Softech</span>, we believe in creating seamless experiences for our clients through a methodical, results-driven approach. Our process ensures that every project, regardless of its complexity, is delivered on time, within budget, and exceeds expectations.</p>            
+            <div class="process-overview-wrapper">
+                <div class="process-overview-content">
+                    <div class="process-overview-steps">
+                        <div class="process-overview-step"><a href="#step1"><span>1 <img height="10px" src="{% static 'images/arrow-white.png' %}" alt="arrow icon image"></span></a><p>Discovery & Consultation</p></div>
+                        <div class="process-overview-step"><a href="#step2"><span>2 <img height="10px" src="{% static 'images/arrow-white.png' %}" alt="arrow icon image"></span></a><p>Plan & Strategy</p></div>
+                        <div class="process-overview-step"><a href="#step3"><span>3 <img height="10px" src="{% static 'images/arrow-white.png' %}" alt="arrow icon image"></span></a><p>Design & Development</p></div>
+                        <div class="process-overview-step"><a href="#step4"><span>4 <img height="10px" src="{% static 'images/arrow-white.png' %}" alt="arrow icon image"></span></a><p>Implementation & Integration</p></div>
+                        <div class="process-overview-step"><a href="#step5"><span>5 <img height="10px" src="{% static 'images/arrow-white.png' %}" alt="arrow icon image"></span></a><p>Testing & Quality Assurance</p></div>
+                        <div class="process-overview-step"><a href="#step6"><span>6 <img height="10px" src="{% static 'images/arrow-white.png' %}" alt="arrow icon image"></span></a><p>Launch & Support</p></div>
+                        <div class="process-overview-step"><a href="#step7"><span>7 <img height="10px" src="{% static 'images/arrow-white.png' %}" alt="arrow icon image"></span></a><p>Continuous Improvement</p></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Process Summary Section -->
+    <section class="process-summary">
+        <div class="process-container">
+            <a href="{% url 'contact' %}" class="cta-btn process-cta">Get A Free Consultation</a>
+            <div class="process-sumamry-wrapper">
+                <!-- Process Step 1 -->
+                <div class="process1" id="step1">
+                    <p class="step">Step 1</p>
+                    <div class="process1-left">
+                        <div>
+                            <div class="title">
+                                <div></div>
+                                <p>Discovery & Consultation</p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="process-description">
+                                The foundation of every successful partnership begins with a clear understanding of 
+                                your unique needs, challenges, and objectives. During the discovery phase, we take
+                                 the time 
+                                to learn about your business, the problems you aim to solve, and your long-term vision.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="process1-right">
+                        <p>What you can expect:</p>
+                        <ul>
+                            <li>In-depth discovery sessions to understand your requirements</li>
+                            <li>Evaluation of existing infrastructure and processes</li>
+                            <li>Stakeholder discussions to align expectations</li>
+                            <li>Expert advice on best practices, technology choices, and scalable solutions</li>
+                            
+                        </ul>
+                    </div>
+                    <p class="process-bottom-text">
+                        Our goal here is to establish a solid foundation for the project, ensuring we have a comprehensive understanding of your needs before proceeding to the next stage.
+                    </p>
+                </div>
+
+                <!-- Process Step 2 -->
+                <div class="process1" id="step2">
+                    <p class="step">Step 2</p>
+                    <div class="process1-left">
+                        <div>
+                            <div class="title">
+                                <div></div>
+                                <p>Plan & Strategy</p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="process-description">
+                                In this phase, we translate your business requirements into a clear, actionable plan. Our team works to align the project with your goals and prepares a roadmap to ensure smooth execution. We collaborate closely to design the best strategy tailored to your needs.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="process1-right">
+                        <p>What you can expect:</p>
+                        <ul>
+                            <li>Development of a detailed project plan with timelines and milestones</li>
+                            <li>Strategic recommendations based on your business goals</li>
+                            <li>Risk assessment and mitigation strategies</li>
+                            <li>Clear communication and alignment on objectives and deliverables</li>
+                        </ul>
+                    </div>
+                    <p class="process-bottom-text">
+                        This stage ensures that both teams are aligned and working towards a common goal, reducing the risk of miscommunication and ensuring project success.
+                    </p>
+                </div>
+                
+                <!-- Process Step 3 -->
+                <div class="process1" id="step3">
+                    <p class="step">Step 3</p>
+                    <div class="process1-left">
+                        <div>
+                            <div class="title">
+                                <div></div>
+                                <p>Design & Development</p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="process-description">
+                                We create visually engaging designs and interactive prototypes that bring your ideas to life. This phase involves iterative design cycles, ensuring that all the essential user interfaces and experience elements are thoroughly thought out and approved before moving forward.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="process1-right">
+                        <p>What you can expect:</p>
+                        <ul>
+                            <li>Interactive prototypes that simulate user experience</li>
+                            <li>Multiple design iterations based on your feedback</li>
+                            <li>Comprehensive UI/UX design aligned with user needs</li>
+                            <li>Stakeholder involvement in review and approval</li>
+                        </ul>
+                    </div>
+                    <p class="process-bottom-text">
+                        By the end of this stage, we ensure that the design fully captures your vision and is ready for development.
+                    </p>
+                </div>
+                
+                <!-- Process Step 4 -->
+                <div class="process1" id="step4">
+                    <p class="step">Step 4</p>
+                    <div class="process1-left">
+                        <div>
+                            <div class="title">
+                                <div></div>
+                                <p>Implementation & Integration                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="process-description">
+                                In this phase, our developers take the approved designs and prototypes and begin transforming them into a fully functional product. The development phase is focused on creating the technical aspects of your solution, ensuring that everything functions as expected.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="process1-right">
+                        <p>What you can expect:</p>
+                        <ul>
+                            <li>Agile development cycles with frequent updates</li>
+                            <li>Collaboration between design, development, and testing teams</li>
+                            <li>Regular progress reviews to ensure alignment</li>
+                            <li>Focus on code quality, scalability, and maintainability</li>
+                        </ul>
+                    </div>
+                    <p class="process-bottom-text">
+                        This stage is where the technical magic happens, as we create a functional product ready for testing and refinement.
+                    </p>
+                </div>
+ 
+                <!-- Process Step 5 -->
+                <div class="process1" id="step5">
+                    <p class="step">Step 5</p>
+                    <div class="process1-left">
+                        <div>
+                            <div class="title">
+                                <div></div>
+                                <p>Testing & Quality Assurance</p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="process-description">
+                                Quality assurance is a critical part of our process. During this phase, we rigorously test the product to identify and fix any bugs, ensuring that the product is fully functional and meets your business requirements. Our testing includes functional, performance, and security checks.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="process1-right">
+                        <p>What you can expect:</p>
+                        <ul>
+                            <li>Comprehensive testing including functional, integration, and user acceptance</li>
+                            <li>Bug identification and resolution</li>
+                            <li>Performance optimization and security audits</li>
+                            <li>Continuous feedback loops with the client for issue resolution</li>
+                        </ul>
+                    </div>
+                    <p class="process-bottom-text">
+                        This phase ensures that the solution meets high-quality standards and is ready for deployment.
+                    </p>
+                </div>
+                 
+                <!-- Process Step 6 -->
+                <div class="process1" id="step6">
+                    <p class="step">Step 6</p>
+                    <div class="process1-left">
+                        <div>
+                            <div class="title">
+                                <div></div>
+                                <p>Launch & Support</p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="process-description">
+                                After testing and quality assurance, we proceed to deploy the solution to your live environment. We ensure that everything is configured correctly and functioning as expected before the official launch. Our team is available to address any issues that may arise during the launch process.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="process1-right">
+                        <p>What you can expect:</p>
+                        <ul>
+                            <li>Deployment to production environment with proper configurations</li>
+                            <li>Launch preparation and contingency planning</li>
+                            <li>Post-launch monitoring for any unforeseen issues</li>
+                            <li>Comprehensive support and maintenance post-launch</li>
+                        </ul>
+                    </div>
+                    <p class="process-bottom-text">
+                        We ensure a smooth launch, ensuring your solution is live and ready for users while offering continued support for a successful transition.
+                    </p>
+                </div>
+                
+                <!-- Process Step 7 -->
+                <div class="process1" id="step7">
+                    <p class="step">Step 7</p>
+                    <div class="process1-left">
+                        <div>
+                            <div class="title">
+                                <div></div>
+                                <p>Ongoing Support & Maintenance</p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="process-description">
+                                Our partnership doesn't end at launch. We offer ongoing support and maintenance to ensure that your solution continues to operate smoothly and evolves with your business. We monitor performance, address issues, and implement updates as needed.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="process1-right">
+                        <p>What you can expect:</p>
+                        <ul>
+                            <li>Regular updates and performance monitoring</li>
+                            <li>Timely bug fixes and issue resolution</li>
+                            <li>Adaptation to new technologies and business requirements</li>
+                            <li>Ongoing client support and consultation</li>
+                        </ul>
+                    </div>
+                    <p class="process-bottom-text">
+                        Our ongoing support ensures that your solution continues to evolve, keeping your business competitive and your systems running at their best.
+                    </p>
+                </div>  
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-wrapper">
+                <ul class="footer-company">
+                    <li>Company</li>
+                    <li><img src="{% static 'images/address-white.png' %}" alt=""> Sydney, Australia</li>
+                    <li><img src="{% static 'images/call-white.png' %}" alt=""> 0493 476 808</li>
+                    <li><img src="{% static 'images/email-white.png' %}" alt=""> it@savileaf.com.au</li>
+                </ul>
+                <ul class="footer-servicelink">
+                    <li>Our Services</li>
+                    <li><a href="{% url 'website_development' %}" target="_self">Website Development <img
+                                src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy"></a></li>
+                    <li><a href="{% url 'website_redesign' %}" target="_self">Website Redesign & Modernisation <img
+                                src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy"></a></li>
+                    <li><a href="{% url 'web_app_development' %}" target="_self">Web App Development <img
+                                src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy"></a></li>
+                    <li><a href="{% url 'mobile_app_development' %}" target="_self">Mobile App Development <img
+                                src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy"></a></li>
+                    <li><a href="{% url 'payment_gateway' %}" target="_self">Payment Gateway Integration <img
+                                src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy"></a></li>
+                    <li><a href="{% url 'ai_solutions' %}" target="_self">AI-Powered Business Solutions <img
+                                src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy"></a></li>
+                </ul>
+                <ul class="footer-quicklink">
+                    <li>Quick Links</li>
+                    <li><a href="{% url 'home' %}" target="_self">Home <img src="{% static 'images/arrow-white-up.png' %}" alt=""></a></li>
+                    <li><a href="{% url 'case_studies' %}" target="_self">Case Study <img src="{% static 'images/arrow-white-up.png' %}" alt=""></a>
+                    </li>
+                    <li><a href="{% url 'contact' %}" target="_self">Contact <img src="{% static 'images/arrow-white-up.png' %}" alt=""></a></li>
+                    <li><a href="{% url 'home' %}" target="_self">Privacy Policy <img src="{% static 'images/arrow-white-up.png' %}" alt=""></a></li>
+                </ul>
+                <ul class="footer-img">
+                    <a href="{% url 'contact' %}" class="cta-btn">Get Free Estimate</a>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-bottom-text">All Rights Reserved © SaviLeaf</p>
+    </footer>
+    
+    <script src="{% static 'js/index.js' %}"> </script>
+    
+</body>
+</html>

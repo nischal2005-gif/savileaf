@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{% static 'images/favicon-32x32.png' %}" sizes="32x32" type="image/png" />
+    <link rel="icon" href="{% static 'images/favicon-16x16.png' %}" sizes="16x16" type="image/png" />
+    <title>Enterprise Hosting Solutions Case Study | TechCorp Innovations | SilverValley Softech</title>
+    <link rel="stylesheet" href="{% static 'css/casestudyDetail.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <ul id="nav-links" class="navlinks">
+            <li><a href="{% url 'home' %}" target="_self">Home</a></li>
+            <li class="dropdown">
+                <a>Services</a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'website_development' %}" target="_self">Website Development</a></li>
+                    <li><a href="{% url 'website_redesign' %}" target="_self">Website Redesign & Modernisation</a></li>
+                    <li><a href="{% url 'web_app_development' %}" target="_self">Web App Development</a></li>
+                    <li><a href="{% url 'mobile_app_development' %}" target="_self">Mobile App Development</a></li>
+                    <li><a href="{% url 'payment_gateway' %}" target="_self">Payment Gateway Integration</a></li>
+                    <li><a href="{% url 'ai_solutions' %}" target="_self">AI-Powered Business Solutions</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="{% url 'case_studies' %}">Case Studies</a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'global_retailer' %}" target="_self">Global Retailer</a></li>
+                    <li><a href="{% url 'techcorpinnovations' %}" target="_self">TechCorp Innovations</a></li>
+                    <li><a href="{% url 'innovatetech' %}" target="_self">InnovateTech</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'process' %}" target="_self">Our Process</a></li>
+            <li><a href="{% url 'contact' %}" target="_self">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="body-overlay" id="overlay"></div>
+    <header>
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'images/site-logo2.png' %}" height="50px" alt="Company Logo" />
+                </a>
+                <nav>
+                    <div class="hamburger" id="hamburger">
+                        <div class="hamburger-wrapper">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <ul class="navlink-desktopscreen">
+                        <li><a href="{% url 'home' %}" target="_self">Home</a></li>
+                        <li class="dropdown">
+                            <a>Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'website_development' %}" target="_self">Website Development</a></li>
+                                <li><a href="{% url 'website_redesign' %}" target="_self">Website Redesign & Modernisation</a></li>
+                                <li><a href="{% url 'web_app_development' %}" target="_self">Web App Development</a></li>
+                                <li><a href="{% url 'mobile_app_development' %}" target="_self">Mobile App Development</a></li>
+                                <li><a href="{% url 'payment_gateway' %}" target="_self">Payment Gateway Integration</a></li>
+                                <li><a href="{% url 'ai_solutions' %}" target="_self">AI-Powered Business Solutions</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="{% url 'case_studies' %}">Case Studies</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'global_retailer' %}" target="_self">Global Retailer</a></li>
+                                <li><a href="{% url 'techcorpinnovations' %}" target="_self">TechCorp Innovations</a></li>
+                                <li><a href="{% url 'innovatetech' %}" target="_self">InnovateTech</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'process' %}" target="_self">Our Process</a></li>
+                        <li><a href="{% url 'contact' %}" target="_self">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Section -->
+    <section class="navigation">
+        <div class="container">
+            <div class="navigation-content">
+                <p class="page-title">TechCorp Innovations</p>
+                <p><span><a href="{% url 'home' %}" target="_self">Home</a></span> || <span>TechCorp Innovations</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section class="case-study">
+        <div class="container">
+            <div class="title">
+                <div></div>
+                <p>Enterprise Hosting Solution for TechCorp Innovations</p>
+            </div>
+            <div class="case-study-wrapper">
+                <div class="case-study-summary">
+                    <p><strong>Client</strong> TechCorp Innovations</p>
+                    <p><strong>Industry</strong> IT Services</p>
+                    <p><strong>Service Provided</strong> Enterprise Hosting</p>
+                    <p><strong>Duration</strong> 4 months</p>
+                </div>
+                <div class="case-study-details">
+                    <p><strong>Challenge</strong> TechCorp was struggling with frequent downtime and sluggish
+                        performance on their previous hosting platform, leading to disruptions in their operations and
+                        affecting their customer experience. The company was also facing increasing costs due to the
+                        inefficient management of their IT infrastructure, which was not scaling well with their
+                        business growth. Additionally, the slow data transfer speeds were hampering real-time
+                        communication between global teams, affecting project timelines and decision-making.</p>
+
+                    <p><strong>Solution:</strong> SilverValley Softech successfully migrated TechCorp's infrastructure to
+                        a cutting-edge enterprise-grade hosting platform, which ensured 99.99% server uptime.
+                        This move significantly enhanced the reliability of their services and minimized disruptions. By
+                        optimizing their hosting infrastructure, we helped TechCorp achieve a 40% reduction in IT
+                        infrastructure costs, allowing them to reinvest in other areas of the business. Furthermore,
+                        we upgraded their data transfer capabilities, resulting in a 50% increase in data transfer
+                        speeds, improving communication and workflow across global teams.</p>
+                </div>
+                <div class="case-study-result-img">
+                    <p>Results</p>
+                    <div>
+                        <img src="{% static 'images/techcorp-insight1.png' %}" alt="result data insights graph image" />
+                        <img src="{% static 'images/techcorp-insight2.png' %}" alt="result data insights graph image" />
+                        <img src="{% static 'images/techcorp-insight3.png' %}" alt="result data insights graph image" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-wrapper">
+                <ul class="footer-company">
+                    <li>Company</li>
+                    <li><img src="{% static 'images/address-white.png' %}" alt="" /> Sydney, Australia</li>
+                    <li><img src="{% static 'images/call-white.png' %}" alt="" /> 0493 476 808</li>
+                    <li><img src="{% static 'images/email-white.png' %}" alt="" /> it@savileaf.com.au</li>
+                </ul>
+                <ul class="footer-servicelink">
+                    <li>Our Services</li>
+                    <li><a href="{% url 'website_development' %}" target="_self">Website Development <img
+                                src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy" /></a></li>
+                    <li><a href="{% url 'website_redesign' %}" target="_self">Website Redesign & Modernisation <img
+                                src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy" /></a></li>
+                    <li><a href="{% url 'web_app_development' %}" target="_self">Web App Development <img
+                                src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy" /></a></li>
+                    <li><a href="{% url 'mobile_app_development' %}" target="_self">Mobile App Development <img
+                                src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy" /></a></li>
+                    <li><a href="{% url 'payment_gateway' %}" target="_self">Payment Gateway Integration <img
+                                src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy" /></a></li>
+                    <li><a href="{% url 'ai_solutions' %}" target="_self">AI-Powered Business Solutions <img
+                                src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy" /></a></li>
+                </ul>
+                <ul class="footer-quicklink">
+                    <li>Quick Links</li>
+                    <li><a href="{% url 'home' %}" target="_self">Home <img src="{% static 'images/arrow-white-up.png' %}" alt="" /></a></li>
+                    <li><a href="{% url 'case_studies' %}" target="_self">Case Study <img src="{% static 'images/arrow-white-up.png' %}" alt="" /></a></li>
+                    <li><a href="{% url 'contact' %}" target="_self">Contact <img src="{% static 'images/arrow-white-up.png' %}" alt="" /></a></li>
+                    <li><a href="{% url 'home' %}" target="_self">Privacy Policy <img src="{% static 'images/arrow-white-up.png' %}" alt="" /></a></li>
+                </ul>
+                
+                
+                <ul class="footer-img">
+                    <a href="{% url 'contact' %}" class="cta-btn">Get Free Estimate</a>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>Copyright © 2023 SilverValley Softech. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>

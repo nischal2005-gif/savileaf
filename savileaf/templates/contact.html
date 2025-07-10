@@ -1,0 +1,234 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/favicon-32x32.png' %}" sizes="32x32" type="image/png">
+    <link rel="icon" href="{% static 'images/favicon-16x16.png' %}" sizes="16x16" type="image/png">
+    <title>Contact Savileaf | Expert Software Solutions & Support</title>
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <ul id="nav-links" class="navlinks">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li class="dropdown">
+                <a>Services</a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'website_development' %}">Website Development</a></li>
+                    <li><a href="{% url 'website_redesign' %}">Website Redesign & Modernisation</a></li>
+                    <li><a href="{% url 'web_app_development' %}">Web App Development</a></li>
+                    <li><a href="{% url 'mobile_app_development' %}">Mobile App Development</a></li>
+                    <li><a href="{% url 'payment_gateway' %}">Payment Gateway Integration</a></li>
+                    <li><a href="{% url 'ai_solutions' %}">AI-Powered Business Solutions</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="{% url 'case_studies' %}">Case Studies</a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'global_retailer' %}">Global Retailer</a></li>
+                    <li><a href="{% url 'techcorpinnovations' %}">TechCorp Innovations</a></li>
+                    <li><a href="{% url 'innovatetech' %}">InnovateTech</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'process' %}">Our Process</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Header Section -->
+    <div class="body-overlay" id="overlay"></div>
+    <header>
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'images/site-logo2.png' %}" height="50px" alt="Company Logo">
+                </a>
+                <nav>
+                    <div class="hamburger" id="hamburger">
+                        <div class="hamburger-wrapper">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <ul class="navlink-desktopscreen">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li class="dropdown">
+                            <a>Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'website_development' %}">Website Development</a></li>
+                                <li><a href="{% url 'website_redesign' %}">Website Redesign & Modernisation</a></li>
+                                <li><a href="{% url 'web_app_development' %}">Web App Development</a></li>
+                                <li><a href="{% url 'mobile_app_development' %}">Mobile App Development</a></li>
+                                <li><a href="{% url 'payment_gateway' %}">Payment Gateway Integration</a></li>
+                                <li><a href="{% url 'ai_solutions' %}">AI-Powered Business Solutions</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="{% url 'case_studies' %}">Case Studies</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'global_retailer' %}">Global Retailer</a></li>
+                                <li><a href="{% url 'techcorpinnovations' %}">TechCorp Innovations</a></li>
+                                <li><a href="{% url 'innovatetech' %}">InnovateTech</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'process' %}">Our Process</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Section -->
+    <section class="navigation">
+        <div class="container">
+            <div class="navigation-content">
+                <p class="page-title">Contact</p>
+                <p><span><a href="{% url 'home' %}">Home</a></span> || <span>Contact</span></p>
+            </div>
+            <img class="navigation-img" src="{% static 'images/hosting-illustration3.png' %}" alt="">
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-info-title">
+                <div class="title">
+                    <div></div>
+                    <p>Get In Touch With Us</p>
+                </div>
+                <p class="contact-info-title-description">We’re here to assist you! Whether you have a question, need support, or just want to connect, our team is ready to help. Please feel free to reach out to us using the contact form below or directly via email or by phone. We aim to respond to all inquiries within 24-48 hours.</p>
+            </div>
+            <form method="POST" action="">
+                {% csrf_token %}
+            <div class="contact-info-wrapper">
+                <div class="contact-info-form">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="solution">Select a Service</label>
+                                <select id="solution" name="solution">
+                                    <option value="" disabled selected>Select a Service</option>
+                                    <option value="corporate">Corporate Software Solutions</option>
+                                    <option value="enterprise">Enterprise Software Solutions</option>
+                                    <option value="cloudMigration">Cloud Migration Solutions</option>
+                                    <option value="cloudComputing">Cloud Computing Solutions</option>
+                                    <option value="cloudComputing">Cost Estimation</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                                                        <!-- Full Name -->
+                            <div class="form-group">
+                                <label for="fullname">Full Name <span style="color: red;">*</span></label>
+                                <input type="text" id="fullname" name="fullname" required placeholder="Enter your full name">
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label for="email">Email <span style="color: red;">*</span></label>
+                                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                            </div>
+                             <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                            </div>
+
+                            <!-- Message Box -->
+                            <div class="form-group">
+                                <label for="message">Your Message <span style="color: red;">*</span></label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Please provide any additional details or questions you have. We'll get back to you as soon as possible."></textarea>
+                            </div>
+                        </div>
+                         <div class="form-row">
+                            <button type="submit" class="cta-btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="contact-info-detail">
+                    <div class="telephone-img">
+                        <img src="{% static 'images/telephone.png' %}" alt="">
+                    </div>
+                    <div class="contact-info-item address-location">
+                        <div class="info-icon">
+                            <img src="{% static 'images/address-white.png' %}" alt="">
+                            <h3>Address</h3>
+                        </div>
+                        <p>Sydney, Australia</p>
+                    </div>
+                    <div class="contact-info-item office-hours">
+                        <div class="info-icon">
+                            <img src="{% static 'images/hour-white.png' %}" alt="">
+                            <h3>Office Hours</h3>
+                        </div>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    </div>
+                    <div class="contact-info-item phone-number">
+                        <div class="info-icon">
+                            <img src="{% static 'images/call-white.png' %}" alt="">
+                            <h3>Phone</h3>
+                        </div>
+                        <p>0493 476 808</p>
+                    </div>
+                    <div class="contact-info-item email-address">
+                        <div class="info-icon">
+                            <img src="{% static 'images/email-white.png' %}" alt="">
+                            <h3>Email</h3>
+                        </div>
+                        <p>it@savileaf.com.au</p>
+                    </div>
+                </div>
+                <div class="contact-info-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d600177.5696490867!2d150.4872337030947!3d-33.798272444504825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b129838f39a743f%3A0x3017d681632a850!2sSydney%20NSW%2C%20Australia!5e0!3m2!1sen!2snp!4v1750912006446!5m2!1sen!2snp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212038.98934583666!2d151.07417568453468!3d-33.8610762935948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b129838f39a743f%3A0x3017d681632a850!2sSydney%20NSW%2C%20Australia!5e0!3m2!1sen!2snp!4v1750911845917!5m2!1sen!2snp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-wrapper">
+                <ul class="footer-company">
+                    <li>Company</li>
+                    <li><img src="{% static 'images/address-white.png' %}" alt=""> Sydney, Australia</li>
+                    <li><img src="{% static 'images/call-white.png' %}" alt=""> 0493 476 808</li>
+                    <li><img src="{% static 'images/email-white.png' %}" alt=""> it@savileaf.com.au</li>
+                </ul>
+                <ul class="footer-servicelink">
+                    <li>Our Services</li>
+                    <li><a href="{% url 'website_development' %}">Website Development <img src="{% static 'images/arrow-white-up.png' %}" alt=""></a></li>
+                    <li><a href="{% url 'website_redesign' %}">Website Redesign & Modernisation <img src="{% static 'images/arrow-white-up.png' %}" alt=""></a></li>
+                    <li><a href="{% url 'web_app_development' %}">Web App Development <img src="{% static 'images/arrow-white-up.png' %}" alt=""></a></li>
+                    <li><a href="{% url 'mobile_app_development' %}">Mobile App Development <img src="{% static 'images/arrow-white-up.png' %}" alt=""></a></li>
+                    <li><a href="{% url 'payment_gateway' %}">Payment Gateway Integration <img src="{% static 'images/arrow-white-up.png' %}" alt=""></a></li>
+                    <li><a href="{% url 'ai_solutions' %}">AI-Powered Business Solutions <img src="{% static 'images/arrow-white-up.png' %}" alt=""></a></li>
+                </ul>
+                <ul class="footer-quicklink">
+                    <li>Quick Links</li>
+                    <li><a href="{% url 'home' %}">Home <img src="{% static 'images/arrow-white-up.png' %}" alt=""></a></li>
+                    <li><a href="{% url 'case_studies' %}">Case Study <img src="{% static 'images/arrow-white-up.png' %}" alt=""></a></li>
+                    <li><a href="{% url 'contact' %}">Contact <img src="{% static 'images/arrow-white-up.png' %}" alt=""></a></li>
+                    <li><a href="{% url 'home' %}">Privacy Policy <img src="{% static 'images/arrow-white-up.png' %}" alt=""></a></li>
+                </ul>
+                <ul class="footer-img">
+                    <a href="{% url 'contact' %}" class="cta-btn">Get Free Estimate</a>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-bottom-text">All Rights Reserved © SaviLeaf</p>
+    </footer>
+    
+    <script src="{% static 'js/index.js' %}"></script>
+
+</body>
+
+</html>

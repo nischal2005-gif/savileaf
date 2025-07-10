@@ -1,0 +1,425 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{% static 'images/favicon-32x32.png' %}" sizes="32x32" type="image/png">
+    <link rel="icon" href="{% static 'images/favicon-16x16.png' %}" sizes="16x16" type="image/png">
+    <title>Savileaf | Website & App Development with AI Integration for Business Growth</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+</head>
+<body>
+    <div class="top-light"></div>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <ul id="nav-links" class="navlinks">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li class="dropdown">
+                <a>Services</a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'website_development' %}">Website Development</a></li>
+                    <li><a href="{% url 'website_redesign' %}">Website Redesign & Modernisation</a></li>
+                    <li><a href="{% url 'web_app_development' %}">Web App Development</a></li>
+                    <li><a href="{% url 'mobile_app_development' %}">Mobile App Development</a></li>
+                    <li><a href="{% url 'payment_gateway' %}">Payment Gateway Integration</a></li>
+                    <li><a href="{% url 'ai_solutions' %}">AI-Powered Business Solutions</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="{% url 'case_studies' %}">Case Studies</a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'global_retailer' %}">Global Retailer</a></li>
+                    <li><a href="{% url 'techcorpinnovations' %}">TechCorp Innovations</a></li>
+                    <li><a href="{% url 'innovatetech' %}">InnovateTech</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'process' %}">Our Process</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Overlay and Header -->
+    <div class="body-overlay" id="overlay"></div>
+    <header>
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'images/site-logo2.png' %}" height="50px" alt="Company Logo">
+                </a>
+                <nav>
+                    <div class="hamburger" id="hamburger">
+                        <div class="hamburger-wrapper">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <ul class="navlink-desktopscreen">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li class="dropdown">
+                            <a>Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'website_development' %}">Website Development</a></li>
+                                <li><a href="{% url 'website_redesign' %}">Website Redesign & Modernisation</a></li>
+                                <li><a href="{% url 'web_app_development' %}">Web App Development</a></li>
+                                <li><a href="{% url 'mobile_app_development' %}">Mobile App Development</a></li>
+                                <li><a href="{% url 'payment_gateway' %}">Payment Gateway Integration</a></li>
+                                <li><a href="{% url 'ai_solutions' %}">AI-Powered Business Solutions</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="{% url 'case_studies' %}">Case Studies</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'global_retailer' %}">Global Retailer</a></li>
+                                <li><a href="{% url 'techcorpinnovations' %}">TechCorp Innovations</a></li>
+                                <li><a href="{% url 'innovatetech' %}">InnovateTech</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'process' %}">Our Process</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="{% static 'images/line-design.png' %}" alt="" class="hero-design">
+        <img src="{% static 'images/laptop-phone-design3.png' %}" alt="" class="laptop-icon-design">
+        <div class="container">
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <p class="hero-subscript-text">Revolutionizing Your Business with Smart Technology</p>
+                    <h1>Business Growth with Innovative <img src="{% static 'images/solution-text-design4.png' %}" alt=""></h1>
+                    <p class="hero-description">Need a smarter way to run your business online? We design custom web apps that are simple to use, powerful behind the scenes, and built to grow with your business.</p>
+                    <a class="cta-btn" href="{% url 'techcorpinnovations' %}">Get a Free Consultation </a>
+                    <div class="web-language">
+                        <img src="{% static 'images/multiple-language.png' %}" height="45px" alt="multiple-companylogo Image">
+                        <p>Choose Your Platform</p>
+                    </div>
+                </div>
+                <div class="hero-img-wrapper">
+                    <img src="{% static 'images/girl-laptop2.png' %}" alt="" class="hero-img2">
+                    <div class="insight">
+                        <p>
+                            <span>100%</span>
+                            Results Driven
+                        </p>
+                    </div>
+                    <div class="insight2">
+                        <p>
+                            <span>24/7</span>
+                            Local Support
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Cards Section -->
+    <section class="cards">
+        <div class="container">
+            <div class="card-wrapper">
+
+                <!-- Card 1 -->
+                <div class="card">
+                    <button type="button" class="card-header">
+                        <span>Website Development</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="card-body">
+                        <p>Creating responsive and engaging websites that effectively represent your brand online.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <button type="button" class="card-header">
+                        <span>Custom Web App Development</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="card-body">
+                        <p>Building tailored web applications that simplify operations, enhance user experience, and scale with your business.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card card3">
+                    <button type="button" class="card-header">
+                        <span>Modernize Existing Websites</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="card-body">
+                        <p>Refreshing and improving your current website to enhance performance, usability, and design.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <button type="button" class="card-header">
+                        <span>Website Maintenance & Support</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="card-body">
+                        <p>Providing ongoing updates, troubleshooting, and performance optimization to keep your apps running smoothly.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="aboutus">
+        <img class="gradient-design" src="{% static 'images/gradient-design.png' %}" alt="">
+        <div class="container">
+            <div class="title">
+                <div></div>
+                <p>About Us</p>
+            </div>
+            <div class="aboutus-wrapper">
+                <div class="about-content">
+                    <p>At <span>Savileaf</span>, we specialize in building business websites, web applications, mobile applications, AI, and automation solutions designed to help Australian businesses run smarter and grow faster. We focus on creating scalable, user-friendly web apps tailored to your unique business needs — no shortcuts.</p>
+                    <p>As a new company, we’re passionate about delivering high-quality solutions with clear communication and a personal touch. We’re committed to working closely with you to build secure, reliable apps that evolve alongside your business.</p>
+                    <p>Savileaf is your dedicated partner for crafting technology that truly works for you, focused, flexible, and ready to grow with you.</p>
+                    <div class="ceo">
+                        <img src="{% static 'images/signature.png' %}" width="150px" alt="signature image">
+                        <div>
+                            <p>Gopal Gautam</p>
+                            <p>CEO</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-img-wrapper">
+                    <div class="about-us-stats">
+                        <p><span>100 %</span> Modern Solutions</p>
+                        <p><span>24/7</span> Reliable Support</p>
+                        <p><span>100 %</span> Client Focus</p>
+                    </div>
+                    <div class="about-img">
+                        <img class="about-img2" src="{% static 'images/female-working.jpeg' %}" loading="lazy" alt="Staff Image">
+                        <img class="about-img1" src="{% static 'images/group-working-overhead-shot.jpeg' %}" loading="lazy" alt="Building Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hosting Clients Section -->
+    <section class="hosting-clients">
+        <div class="container">
+            <div class="hosting-clients-content">
+                <div class="title">
+                    <div></div>
+                    <p>We Build. We Host.</p>
+                </div>
+                <h2>Scalable hosting solutions for every website and web app we deliver.</h2>
+                <p class="hosting-clients-content-description">From development to deployment, we provide reliable, secure hosting for the platforms we build. Whether it's a custom web application or a business website, our hosting plans ensure fast performance, data protection, and room to grow. All in one place built and hosted by the same team.</p>
+            </div>
+            <div class="hosting-design">
+                <img src="{% static 'images/icon-circle-lines-design.png' %}" class="hosting-line-design" alt="">
+                <img src="{% static 'images/laptop-cloud-design.png' %}" class="hosting-design-img" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Overview Section -->
+    <section class="service-overview">
+        <div class="service service1">
+            <img src="{% static 'images/laptop-icon-design2.png' %}" alt="">
+            <h3>Software Development</h3>
+            <p>Tailor-made solutions built to streamline your operations, enhance customer experiences, and drive innovation for your business.</p>
+        </div>
+        <div class="service service2">
+            <img src="{% static 'images/data-icon-design2.png' %}" alt="">
+            <h3>Smart AI Integration</h3>
+            <p>Leverage AI integration to optimize operations and fuel business growth. Our solutions automate processes, boost efficiency, and adapt to your business.</p>
+        </div>
+        <div class="service service3">
+            <img src="{% static 'images/cloud-icon-design2.png' %}" alt="">
+            <h3>Cloud Migration</h3>
+            <p>Seamless migration to the cloud with minimal downtime enabling agility, cost-efficiency, and future-ready performance.</p>    
+        </div>
+        <div class="service service4">
+            <h2>Request a Consultation</h2>
+            <p>Looking for more in-depth information about how we can help your business grow?</p>
+            <a href="{% url 'contact' %}" class="cta-btn">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us">
+        <img class="why-us-gradient-design" src="{% static 'images/gradient-design2.png' %}" alt="">
+        <div class="container">
+            <div class="title">
+                <div></div>
+                <p>Why Us</p>
+            </div>
+            <div class="why-us-wrapper">
+                <div class="why-us-box">
+                    <img src="{% static 'images/shield-check-icon3.png' %}" height="50px" loading="lazy" alt="safe and secured icon image">
+                    <h2>Safe and Secured</h2>
+                    <p>Guard your data with top-tier security. Implement proactive measures to ensure integrity and trust at every level.</p>
+                </div>
+
+                <div class="why-us-box">
+                    <img src="{% static 'images/money-icon3.png' %}" height="50px" loading="lazy" alt="money-back guarantee icon image">
+                    <h2>Money-Back Guarantee</h2>
+                    <p>Experience our services risk-free. If you're not satisfied, get a full refund with no questions asked.</p>
+                </div>
+
+                <div class="why-us-box">
+                    <img src="{% static 'images/bulls-eye-icon3.png' %}" height="50px" loading="lazy" alt="precision-engineered solutions icon image">
+                    <h2>Precision-Engineered Solutions</h2>
+                    <p>Deliver tailored solutions that fit your needs. Maximize efficiency through highly customized and effective technology.</p>
+                </div>
+
+                <div class="why-us-box">
+                    <img src="{% static 'images/headphone-icon3.png' %}" height="50px" loading="lazy" alt="dedicated support icon image">
+                    <h2>Dedicated Support</h2>
+                    <p>Receive unparalleled assistance around the clock. Our experts are ready to resolve issues quickly and effectively.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial Section -->
+    <section class="testimonial">
+        <div class="container">
+            <div class="title">
+                <div></div>
+                <p>Clients Testimonial's</p>
+            </div>
+            <div class="testimonial-wrapper">
+                <div class="prev" onclick="prevTestimonial()">
+                    <img src="{% static 'images/prev-icon.png' %}" height="25px" alt="left arrow icon image">
+                </div>
+                <div class="next" onclick="nextTestimonial()">
+                    <img src="{% static 'images/next-icon.png' %}" height="25px" alt="right arrow icon image">
+                </div>
+                <div class="testimonial-box-wrapper">
+                    <!-- Testimonial boxes (1–4) – content unchanged -->
+                    {% for i in "1234" %}
+                    <div class="testimonial-box">
+                        <div class="testimonial-img-wrapper">
+                            <div>
+                                <img src="{% static 'images/star.png' %}" class="testimonial-rating" loading="lazy" alt="star icon image" height="12px">
+                                <span>5.0</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div>
+                                <img src="{% static 'images/quotation-icon.png' %}" loading="lazy" alt="quotation icon image">
+                            </div>
+                            <p>“Sample testimonial content here.”</p>
+                            <p>Client Name</p>
+                            <div class="testimonial-page">
+                                <p>{{ forloop.counter }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-wrapper">
+                <div class="cta-img">
+                    <img src="{% static 'images/monitor-codelogo-illustration.png' %}" loading="lazy" alt="website graphic image">
+                </div>
+                <div class="cta-content">
+                    <h2>Ready to Level Up with a Powerful Web Solution?</h2>
+                    <a href="{% url 'contact' %}" target="_self" class="cta-btn">Let's talk</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-wrapper">
+                <ul class="footer-company">
+                    <li>Company</li>
+                    <li><img src="{% static 'images/address-white.png' %}" alt=""> Sydney, Australia</li>
+                    <li><img src="{% static 'images/call-white.png' %}" alt=""> 0493 476 808</li>
+                    <li><img src="{% static 'images/email-white.png' %}" alt=""> it@savileaf.com.au</li>
+                </ul>
+                <ul class="footer-servicelink">
+                    <li>Our Services</li>
+                    <li><a href="{% url 'website_development' %}">Website Development <img src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy"></a></li>
+                    <li><a href="{% url 'website_redesign' %}">Website Redesign & Modernisation <img src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy"></a></li>
+                    <li><a href="{% url 'web_app_development' %}">Web App Development <img src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy"></a></li>
+                    <li><a href="{% url 'mobile_app_development' %}">Mobile App Development <img src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy"></a></li>
+                    <li><a href="{% url 'payment_gateway' %}">Payment Gateway Integration <img src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy"></a></li>
+                    <li><a href="{% url 'ai_solutions' %}">AI-Powered Business Solutions <img src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy"></a></li>
+                </ul>
+                <ul class="footer-quicklink">
+                    <li>Quick Links</li>
+                    <li><a href="{% url 'home' %}">Home <img src="{% static 'images/arrow-white-up.png' %}" alt=""></a></li>
+                    <li><a href="{% url 'case_studies' %}">Case Study <img src="{% static 'images/arrow-white-up.png' %}" alt=""></a></li>
+                    <li><a href="{% url 'contact' %}">Contact <img src="{% static 'images/arrow-white-up.png' %}" alt=""></a></li>
+                    <li><a href="{% url 'home' %}">Privacy Policy <img src="{% static 'images/arrow-white-up.png' %}" alt=""></a></li>
+                </ul>
+                <ul class="footer-img">
+                    <a href="{% url 'contact' %}" class="cta-btn">Get Free Estimate</a>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-bottom-text">All Rights Reserved © SaviLeaf</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{% static 'js/index.js' %}"></script>
+    <script>
+        let currentIndex = 0;
+        const testimonials = document.querySelectorAll('.testimonial-box');
+        const totalTestimonials = testimonials.length;
+
+        function updateCarousel() {
+            const testimonialWrapper = document.querySelector('.testimonial-box-wrapper');
+            const testimonialWidth = testimonials[0].offsetWidth;
+            testimonialWrapper.style.transform = `translateX(-${currentIndex * testimonialWidth}px)`;
+        }
+
+        function nextTestimonial() {
+            currentIndex = (currentIndex + 1) % totalTestimonials;
+            updateCarousel();
+        }
+
+        function prevTestimonial() {
+            currentIndex = (currentIndex - 1 + totalTestimonials) % totalTestimonials;
+            updateCarousel();
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const headers = document.querySelectorAll(".card-header");
+            headers.forEach(header => {
+                header.addEventListener("click", function () {
+                    const card = this.closest(".card");
+                    const cardBody = card.querySelector(".card-body");
+                    const isOpen = card.classList.contains("open");
+
+                    document.querySelectorAll(".card").forEach(c => {
+                        c.classList.remove("open");
+                        c.querySelector(".card-body").style.maxHeight = null;
+                        c.querySelector(".card-header").classList.remove("open");
+                        c.querySelector(".accordion-icon").textContent = "+";
+                    });
+
+                    if (!isOpen) {
+                        card.classList.add("open");
+                        this.classList.add("open");
+                        cardBody.style.maxHeight = cardBody.scrollHeight + "px";
+                        this.querySelector(".accordion-icon").textContent = "×";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
