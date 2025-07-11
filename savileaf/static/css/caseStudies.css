@@ -1,6 +1,7 @@
 /* Navigation Section */
 .navigation {
-    background-image: url('../static/images/graph-hand.jpeg');
+    background: black !important;
+    background-image: url('../static/images/graph-hand.jpeg') !important;
     /* Keep all other existing properties */
     background-position: center center;
     background-repeat: no-repeat;

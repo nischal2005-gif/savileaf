@@ -46,6 +46,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'savileaf.context_processors.dropdown_items', 
+                'savileaf.context_processors.footer_services',
+
+                
             ],
         },
     },
@@ -104,3 +108,7 @@ EMAIL_HOST_PASSWORD = 'zrbv iudw talx psiq'
 
 # Default primary key field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+MEDIA_URL = '/media/'  
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -14,30 +14,27 @@
 
 <body>
     <!-- Sidebar -->
-    <nav class="sidebar" id="sidebar">
+      <nav class="sidebar" id="sidebar">
         <ul id="nav-links" class="navlinks">
-            <li><a href="{% url 'home' %}" target="_self">Home</a></li>
-            <li class="dropdown">
-                <a>Services</a>
-                <ul class="dropdown-menu">
-                    <li><a href="{% url 'website_development' %}" target="_self">Website Development</a></li>
-                    <li><a href="{% url 'website_redesign' %}" target="_self">Website Redesign & Modernisation</a></li>
-                    <li><a href="{% url 'web_app_development' %}" target="_self">Web App Development</a></li>
-                    <li><a href="{% url 'mobile_app_development' %}" target="_self">Mobile App Development</a></li>
-                    <li><a href="{% url 'payment_gateway' %}" target="_self">Payment Gateway Integration</a></li>
-                    <li><a href="{% url 'ai_solutions' %}" target="_self">AI-Powered Business Solutions</a></li>
-                </ul>
-            </li>
+            <li><a href="{% url 'home' %}">Home</a></li>
+           <li class="dropdown">
+                            <a>Services</a>
+                          <ul class="dropdown-menu">
+                            {% for item in dropdown_items %}
+                                <li><a href="{{ item.get_absolute_url }}">{{ item.label }}</a></li>
+                            {% endfor %}
+                        </ul> 
+                        </li>
             <li class="dropdown">
                 <a href="{% url 'case_studies' %}">Case Studies</a>
                 <ul class="dropdown-menu">
-                    <li><a href="{% url 'global_retailer' %}" target="_self">Global Retailer</a></li>
-                    <li><a href="{% url 'techcorpinnovations' %}" target="_self">TechCorp Innovations</a></li>
-                    <li><a href="{% url 'innovatetech' %}" target="_self">InnovateTech</a></li>
+                    <li><a href="{% url 'global_retailer' %}">Global Retailer</a></li>
+                    <li><a href="{% url 'techcorpinnovations' %}">TechCorp Innovations</a></li>
+                    <li><a href="{% url 'innovatetech' %}">InnovateTech</a></li>
                 </ul>
             </li>
-            <li><a href="{% url 'process' %}" target="_self">Our Process</a></li>
-            <li><a href="{% url 'contact' %}" target="_self">Contact</a></li>
+            <li><a href="{% url 'process' %}">Our Process</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
     </nav>
 
@@ -47,7 +44,7 @@
         <div class="container">
             <div class="header-wrapper">
                 <a href="{% url 'home' %}">
-                    <img src="{% static 'images/site-logo2.png' %}" height="50px" alt="Company Logo" />
+                    <img src="{% static '/images/site-logo2.png' %}" height="50px" alt="Company Logo">
                 </a>
                 <nav>
                     <div class="hamburger" id="hamburger">
@@ -57,33 +54,31 @@
                         </div>
                     </div>
                     <ul class="navlink-desktopscreen">
-                        <li><a href="{% url 'home' %}" target="_self">Home</a></li>
+                        <li><a href="{% url 'home' %}">Home</a></li>
                         <li class="dropdown">
-                            <a>Services</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{% url 'website_development' %}" target="_self">Website Development</a></li>
-                                <li><a href="{% url 'website_redesign' %}" target="_self">Website Redesign & Modernisation</a></li>
-                                <li><a href="{% url 'web_app_development' %}" target="_self">Web App Development</a></li>
-                                <li><a href="{% url 'mobile_app_development' %}" target="_self">Mobile App Development</a></li>
-                                <li><a href="{% url 'payment_gateway' %}" target="_self">Payment Gateway Integration</a></li>
-                                <li><a href="{% url 'ai_solutions' %}" target="_self">AI-Powered Business Solutions</a></li>
-                            </ul>
+                           <a>Services</a>
+                             <ul class="dropdown-menu">
+    {% for item in dropdown_items %}
+        <li><a href="{{ item.get_absolute_url }}">{{ item.label }}</a></li>
+    {% endfor %}
+</ul>
                         </li>
                         <li class="dropdown">
                             <a href="{% url 'case_studies' %}">Case Studies</a>
                             <ul class="dropdown-menu">
-                                <li><a href="{% url 'global_retailer' %}" target="_self">Global Retailer</a></li>
-                                <li><a href="{% url 'techcorpinnovations' %}" target="_self">TechCorp Innovations</a></li>
-                                <li><a href="{% url 'innovatetech' %}" target="_self">InnovateTech</a></li>
+                                <li><a href="{% url 'global_retailer' %}">Global Retailer</a></li>
+                                <li><a href="{% url 'techcorpinnovations' %}">TechCorp Innovations</a></li>
+                                <li><a href="{% url 'innovatetech' %}">InnovateTech</a></li>
                             </ul>
                         </li>
-                        <li><a href="{% url 'process' %}" target="_self">Our Process</a></li>
-                        <li><a href="{% url 'contact' %}" target="_self">Contact</a></li>
+                        <li><a href="{% url 'process' %}">Our Process</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
+
 
     <!-- Navigation Section -->
     <section class="navigation">
@@ -138,7 +133,7 @@
     </section>
 
     <!-- Footer Section -->
-    <footer>
+     <footer>
         <div class="container">
             <div class="footer-wrapper">
                 <ul class="footer-company">
@@ -148,20 +143,16 @@
                     <li><img src="{% static 'images/email-white.png' %}" alt="" /> it@savileaf.com.au</li>
                 </ul>
                 <ul class="footer-servicelink">
-                    <li>Our Services</li>
-                    <li><a href="{% url 'website_development' %}" target="_self">Website Development <img
-                                src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy" /></a></li>
-                    <li><a href="{% url 'website_redesign' %}" target="_self">Website Redesign & Modernisation <img
-                                src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy" /></a></li>
-                    <li><a href="{% url 'web_app_development' %}" target="_self">Web App Development <img
-                                src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy" /></a></li>
-                    <li><a href="{% url 'mobile_app_development' %}" target="_self">Mobile App Development <img
-                                src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy" /></a></li>
-                    <li><a href="{% url 'payment_gateway' %}" target="_self">Payment Gateway Integration <img
-                                src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy" /></a></li>
-                    <li><a href="{% url 'ai_solutions' %}" target="_self">AI-Powered Business Solutions <img
-                                src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy" /></a></li>
-                </ul>
+    <li>Our Services</li>
+    {% for service in footer_services %}
+        <li>
+            <a href="{{ service.get_absolute_url }}" target="_self">
+                {{ service.name }}
+                <img src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy" />
+            </a>
+        </li>
+    {% endfor %}
+</ul>
                 <ul class="footer-quicklink">
                     <li>Quick Links</li>
                     <li><a href="{% url 'home' %}" target="_self">Home <img src="{% static 'images/arrow-white-up.png' %}" alt="" /></a></li>
@@ -182,5 +173,8 @@
     </footer>
 
     <script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>
+
 </body>
 </html>

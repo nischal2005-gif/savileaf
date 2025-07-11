@@ -17,17 +17,14 @@
     <nav class="sidebar" id="sidebar">
         <ul id="nav-links" class="navlinks">
             <li><a href="{% url 'home' %}">Home</a></li>
-            <li class="dropdown">
-                <a>Services</a>
-                <ul class="dropdown-menu">
-                    <li><a href="{% url 'website_development' %}">Website Development</a></li>
-                    <li><a href="{% url 'website_redesign' %}">Website Redesign & Modernisation</a></li>
-                    <li><a href="{% url 'web_app_development' %}">Web App Development</a></li>
-                    <li><a href="{% url 'mobile_app_development' %}">Mobile App Development</a></li>
-                    <li><a href="{% url 'payment_gateway' %}">Payment Gateway Integration</a></li>
-                    <li><a href="{% url 'ai_solutions' %}">AI-Powered Business Solutions</a></li>
-                </ul>
-            </li>
+           <li class="dropdown">
+                            <a>Services</a>
+                          <ul class="dropdown-menu">
+                            {% for item in dropdown_items %}
+                                <li><a href="{{ item.get_absolute_url }}">{{ item.label }}</a></li>
+                            {% endfor %}
+                        </ul> 
+                        </li>
             <li class="dropdown">
                 <a href="{% url 'case_studies' %}">Case Studies</a>
                 <ul class="dropdown-menu">
@@ -57,16 +54,15 @@
                     </div>
                     <ul class="navlink-desktopscreen">
                         <li><a href="{% url 'home' %}">Home</a></li>
-                        <li class="dropdown">
+        
+                            
+                            <li class="dropdown">
                             <a>Services</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{% url 'website_development' %}">Website Development</a></li>
-                                <li><a href="{% url 'website_redesign' %}">Website Redesign & Modernisation</a></li>
-                                <li><a href="{% url 'web_app_development' %}">Web App Development</a></li>
-                                <li><a href="{% url 'mobile_app_development' %}">Mobile App Development</a></li>
-                                <li><a href="{% url 'payment_gateway' %}">Payment Gateway Integration</a></li>
-                                <li><a href="{% url 'ai_solutions' %}">AI-Powered Business Solutions</a></li>
-                            </ul>
+                           <ul class="dropdown-menu">
+                            {% for item in dropdown_items %}
+                                <li><a href="{{ item.get_absolute_url }}">{{ item.label }}</a></li>
+                            {% endfor %}
+                        </ul> 
                         </li>
                         <li class="dropdown">
                             <a href="{% url 'case_studies' %}">Case Studies</a>
@@ -351,12 +347,14 @@
                 </ul>
                 <ul class="footer-servicelink">
                     <li>Our Services</li>
-                    <li><a href="{% url 'website_development' %}">Website Development <img src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy"></a></li>
-                    <li><a href="{% url 'website_redesign' %}">Website Redesign & Modernisation <img src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy"></a></li>
-                    <li><a href="{% url 'web_app_development' %}">Web App Development <img src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy"></a></li>
-                    <li><a href="{% url 'mobile_app_development' %}">Mobile App Development <img src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy"></a></li>
-                    <li><a href="{% url 'payment_gateway' %}">Payment Gateway Integration <img src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy"></a></li>
-                    <li><a href="{% url 'ai_solutions' %}">AI-Powered Business Solutions <img src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy"></a></li>
+                        {% for service in footer_services %}
+        <li>
+            <a href="{{ service.get_absolute_url }}" target="_self">
+                {{ service.name }}
+                <img src="{% static 'images/arrow-white-up.png' %}" alt="" loading="lazy" />
+            </a>
+        </li>
+    {% endfor %}
                 </ul>
                 <ul class="footer-quicklink">
                     <li>Quick Links</li>

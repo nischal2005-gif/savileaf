@@ -1,4 +1,5 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,get_object_or_404
+from .models import *
 import requests
 from django.contrib import messages
 from django.core.mail import send_mail
@@ -78,3 +79,16 @@ def enterprise_hosting_view(request):
 
 def enterprise_software_view(request):
     return render(request, 'services/enterprise-software.html')
+
+# def service_detail(request, slug):
+#     service = get_object_or_404(Service, slug=slug)
+#     features = service.features.all()
+#     return render(request, 'services/service_detail.html', {
+#         'service': service,
+#         'features': features,
+#     })
+def service_detail(request, slug):
+    service = get_object_or_404(DropdownMenuItem, url_name=slug, active=True)
+    return render(request, 'services/service_detail.html', {'service': service, 'page_title': service.section_title 
+})
+
