@@ -562,7 +562,7 @@ body{
 
 /* Hosting Clients Section */
 .hosting-clients{
-    background-image:linear-gradient(to left, #0000008f,#000000f3, #000000), url("/images/silver-wave-background2.jpg");
+    background-image:linear-gradient(to left, #0000008f,#000000f3, #000000), url("/static/images/silver-wave-background2.jpg");
     background-position: bottom center;
     background-size: cover;
     background-repeat: no-repeat;

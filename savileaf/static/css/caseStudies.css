@@ -1,7 +1,7 @@
 /* Navigation Section */
 .navigation {
-    background: black !important;
-    background-image: url('../static/images/graph-hand.jpeg') !important;
+    background: linear-gradient(75deg, #00c597, #3be6be, #a5f1e0);
+    /* background-image: url('/images/graph-hand.jpeg') !important; */
     /* Keep all other existing properties */
     background-position: center center;
     background-repeat: no-repeat;

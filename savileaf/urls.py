@@ -29,5 +29,5 @@ urlpatterns = [
     path('services/enterprise-hosting/', views.enterprise_hosting_view, name='enterprise_hosting'),
     path('services/enterprise-software/', views.enterprise_software_view, name='enterprise_software'),
     path('services/<slug:slug>/', views.service_detail, name='service_detail'),
-    path('chat/',views.chat_view,name='chat')
+    
 ]

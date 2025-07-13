@@ -82,7 +82,7 @@
 /* Process Summary Section */
 .process-summary{
     background: #001b13;
-    background-image: url("/images/process-summary-bg-img2.png");
+    background-image: url("/static/images/process-summary-bg-img2.png");
     background-repeat: no-repeat;
     background-attachment: fixed; 
     background-size: contain;
@@ -174,7 +174,7 @@
 .process1-right ul li::before{
     content: "";
     position: absolute;
-    background-image: url('/images/circle-check.png');
+    background-image: url('/static/images/circle-check.png');
     height: 14px;
     width: 14px;
     background-size: contain;
