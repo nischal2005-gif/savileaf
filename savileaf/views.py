@@ -1,9 +1,56 @@
 from django.shortcuts import render,get_object_or_404
 from .models import *
-import requests
-from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
+import openai,os,json
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from openai import OpenAI
+openai.api_key=settings.OPENAI_API_KEY
+client = OpenAI()
+
+def get_context():
+    file_path = os.path.join(os.path.dirname(__file__), 'site_info.txt')
+    with open(file_path, 'r') as file:
+        return file.read()
+
+@csrf_exempt
+def chat_view(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            user_message = data.get("message", "").strip()
+
+            if not user_message:
+                return JsonResponse({"error": "Empty message"}, status=400)
+
+            context = get_context()
+
+            system_prompt = (
+                "You are an AI assistant for Savileaf. "
+                "You have the following knowledge:\n" + context +
+                "\nOnly answer questions directly related to Savileaf's services. "
+                "If the user asks about anything else, politely decline."
+            )
+
+            response = client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_message}
+                ],
+                temperature=0.7,
+                max_tokens=400
+            )
+
+            reply = response.choices[0].message.content.strip()
+            return JsonResponse({"reply": reply})
+
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=500)
+
+    return JsonResponse({"error": "POST request required"}, status=405)
+
 # Main pages views
 def home_view(request):
     return render(request, 'index.html')

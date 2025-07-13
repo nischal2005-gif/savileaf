@@ -419,5 +419,196 @@
             });
         });
     </script>
+    <title>Savileaf Chatbot - Leafa</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Floating button */
+    .chat-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #65b47b;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    /* Chat container */
+    .chatbox {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 360px;
+      height: 520px;
+      background: #f9f9f9;
+      border-radius: 16px;
+      box-shadow: 0 0 18px rgba(0,0,0,0.15);
+      display: none;
+      flex-direction: column;
+      border: 1px solid #ddd;
+      z-index: 1001;
+    }
+
+    .chat-header {
+      background-color: #65b47b;
+      color: white;
+      padding: 12px 16px;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+    }
+
+    .chat-header button {
+      background: none;
+      color: white;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .chat-log {
+      flex-grow: 1;
+      padding: 12px;
+      overflow-y: auto;
+      font-size: 14px;
+      background: #fff;
+    }
+
+    .chat-log .bubble {
+      max-width: 80%;
+      margin: 8px 0;
+      padding: 10px 14px;
+      border-radius: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      display: inline-block;
+      line-height: 1.4;
+    }
+
+    .user {
+      background-color: #e0f5e9;
+      color: #333;
+      align-self: flex-end;
+      border-bottom-right-radius: 0;
+    }
+
+    .bot {
+      background-color: #f1f1f1;
+      color: #333;
+      align-self: flex-start;
+      border-bottom-left-radius: 0;
+    }
+
+    .chat-input {
+      display: flex;
+      border-top: 1px solid #ccc;
+      background: #fff;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .chat-input button {
+      background-color: #65b47b;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      cursor: pointer;
+    }
+
+    .chat-footer {
+      font-size: 11px;
+      color: #777;
+      text-align: center;
+      padding: 6px;
+      background: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Toggle button -->
+<button class="chat-toggle" onclick="toggleChat()">Need Help?</button>
+
+<!-- Chatbox -->
+<div class="chatbox" id="chatbox">
+  <div class="chat-header">
+    <span>Nischal – Savileaf Assistant</span>
+    <button onclick="toggleChat()">✖</button>
+  </div>
+  <div class="chat-log" id="chat-log">
+    <div class="bubble bot"><strong>Nischal:</strong> Hi! I’m <strong>Nischal</strong>, your Savileaf assistant <br>How can I help you with our software service and products today?</div>
+  </div>
+  <div class="chat-input">
+    <input type="text" id="userInput" placeholder="Ask something..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+  <div class="chat-footer">Powered by AI — May occasionally make mistakes</div>
+</div>
+
+<script>
+  function toggleChat() {
+    const chat = document.getElementById("chatbox");
+    chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+  }
+
+  async function sendMessage() {
+  const input = document.getElementById("userInput");
+  const message = input.value.trim();
+  if (!message) return;
+
+  appendMessage("You", message, "user");
+  input.value = "";
+
+  try {
+    const response = await fetch("/chat/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message })
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || "Something went wrong");
+    }
+
+    const data = await response.json();
+    appendMessage("Leafa", data.reply, "bot");
+  } catch (error) {
+    console.error("Chat Error:", error.message);
+    appendMessage("Leafa", "Sorry! Something went wrong: " + error.message, "bot");
+  }
+}
+
+
+  function appendMessage(sender, message, type) {
+    const chatLog = document.getElementById("chat-log");
+    const bubble = document.createElement("div");
+    bubble.className = `bubble ${type}`;
+    bubble.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    chatLog.appendChild(bubble);
+    chatLog.scrollTop = chatLog.scrollHeight;
+  }
+  document.getElementById("userInput").addEventListener("keydown", function(e) {
+  if (e.key === "Enter") {
+    sendMessage();
+  }
+});
+</script>
 </body>
 </html>

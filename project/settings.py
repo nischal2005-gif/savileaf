@@ -1,5 +1,8 @@
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
+OPENAI_API_KEY=os.getenv("OPENAI_API_KEY")
 
 # Base directory of the project
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,6 +15,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
+]
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -21,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'savileaf',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -31,6 +38,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'project.urls'
