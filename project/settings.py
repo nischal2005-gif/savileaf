@@ -41,7 +41,7 @@ SECRET_KEY = 'django-insecure-srb)9(4iv*1zd7g!+5lv3qex4t$&5q4t(yx+^%ua04#k*ns28!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['savileafwebs.onrender.com']
+ALLOWED_HOSTS = ['savileaf-web.onrender.com']
 RECAPTCHA_SITE_KEY='6LfIjXorAAAAAF_-h9v731lG4X8gdOLUpwmYxzgp'
 RECAPTCHA_SECRET_KEY='6LfIjXorAAAAAMGK5XwY3wAOwbD89BVvn5UgyyEm'
 CORS_ALLOWED_ORIGINS = [
