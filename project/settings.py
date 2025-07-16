@@ -1,8 +1,36 @@
 import os
 from pathlib import Path
-from dotenv import load_dotenv
-load_dotenv()
-OPENAI_API_KEY=os.getenv("OPENAI_API_KEY")
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER='json'
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_TIMEZONE='Asia/Kolkata'
+CELERY_RESULT_BACKEND='django-db'
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+LOG_DIR = BASE_DIR / 'logs'
+LOG_DIR.mkdir(exist_ok=True)
+# settings.py
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': 'logs/django_errors.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
 
 # Base directory of the project
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -14,7 +42,8 @@ SECRET_KEY = 'django-insecure-srb)9(4iv*1zd7g!+5lv3qex4t$&5q4t(yx+^%ua04#k*ns28!
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+RECAPTCHA_SITE_KEY='6LfIjXorAAAAAF_-h9v731lG4X8gdOLUpwmYxzgp'
+RECAPTCHA_SECRET_KEY='6LfIjXorAAAAAMGK5XwY3wAOwbD89BVvn5UgyyEm'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
 ]
@@ -27,7 +56,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'savileaf',
-    'corsheaders'
+    'corsheaders',
+    'django_celery_results'
 ]
 
 MIDDLEWARE = [

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/contact.css' %}">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <body>
     <!-- Sidebar -->
@@ -100,7 +101,7 @@
                 </div>
                 <p class="contact-info-title-description">We’re here to assist you! Whether you have a question, need support, or just want to connect, our team is ready to help. Please feel free to reach out to us using the contact form below or directly via email or by phone. We aim to respond to all inquiries within 24-48 hours.</p>
             </div>
-            <form method="POST" action="">
+            <form method="POST" action="" enctype="multipart/form-data">
                 {% csrf_token %}
             <div class="contact-info-wrapper">
                 <div class="contact-info-form">
@@ -139,10 +140,67 @@
                                 <label for="message">Your Message <span style="color: red;">*</span></label>
                                 <textarea id="message" name="message" rows="5" required placeholder="Please provide any additional details or questions you have. We'll get back to you as soon as possible."></textarea>
                             </div>
+                            {% comment %} <div class="form-group"><label for="attachment">Attach File</label>
+    <input type="file" id="attachment" name="attachment">
+</div> {% endcomment %}
+
                         </div>
+                        <div class="g-recaptcha" data-sitekey="6LfIjXorAAAAAF_-h9v731lG4X8gdOLUpwmYxzgp"></div>
+
+ 
+
+
+ 
+{% if messages %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      {% for message in messages %}
+        {% if 'success' in message.tags %}
+          Swal.fire({
+            icon: 'success',
+            title: '{{ message|escapejs }}',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            customClass: {
+              title: 'swal-title-small',
+              popup: 'swal-popup-small'
+            }
+          });
+        {% elif 'error' in message.tags %}
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: '{{ message|escapejs }}',
+            showConfirmButton: false,
+            timer: 4000,
+            timerProgressBar: true,
+            customClass: {
+              title: 'swal-title-small',
+              popup: 'swal-popup-small'
+            }
+          });
+        {% endif %}
+      {% endfor %}
+    });
+  </script>
+{% endif %}<br>
+<style>
+  .swal-title-small {
+    font-size: 16px !important;
+  }
+  .swal-popup-small {
+    font-size: 14px !important;
+    color:green;
+    padding: 1.2rem !important;
+    border-radius: 0.5rem;
+  }
+</style>
+
                          <div class="form-row">
                             <button type="submit" class="cta-btn">Submit</button>
                         </div>
+                        
                     </form>
                 </div>
                 <div class="contact-info-detail">
@@ -226,7 +284,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="{% static 'js/index.js' %}"></script>
 </body>
 </html>
