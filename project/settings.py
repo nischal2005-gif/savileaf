@@ -1,12 +1,12 @@
 import os
 from pathlib import Path
 
-CELERY_BROKER_URL = os.environ.get('REDIS_URL', 'redis://localhost:6379')
-CELERY_RESULT_BACKEND = os.environ.get('REDIS_URL', 'redis://localhost:6379')
-CELERY_ACCEPT_CONTENT = ['application/json']
-CELERY_RESULT_SERIALIZER='json'
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_TIMEZONE='Asia/Kolkata'
+# CELERY_BROKER_URL = os.environ.get('REDIS_URL', 'redis://localhost:6379')
+# CELERY_RESULT_BACKEND = os.environ.get('REDIS_URL', 'redis://localhost:6379')
+# CELERY_ACCEPT_CONTENT = ['application/json']
+# CELERY_RESULT_SERIALIZER='json'
+# CELERY_TASK_SERIALIZER = 'json'
+# CELERY_TIMEZONE='Asia/Kolkata'
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 LOG_DIR = BASE_DIR / 'logs'
@@ -40,7 +40,7 @@ SECRET_KEY = 'django-insecure-srb)9(4iv*1zd7g!+5lv3qex4t$&5q4t(yx+^%ua04#k*ns28!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['savileaf-webs.onrender.com']
+ALLOWED_HOSTS = ['web-savileaf.onrender.com']
 RECAPTCHA_SITE_KEY='6LfIjXorAAAAAF_-h9v731lG4X8gdOLUpwmYxzgp'
 RECAPTCHA_SECRET_KEY='6LfIjXorAAAAAMGK5XwY3wAOwbD89BVvn5UgyyEm'
 CORS_ALLOWED_ORIGINS = [
